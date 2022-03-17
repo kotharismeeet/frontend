@@ -1,12 +1,10 @@
 import Button from '@mui/material/Button';
-//import {ThemeProvider} from '@mui/material/styles';
-//import theme from './muiTheme';
+import { Link } from 'react-router-dom';
+import {buttonWithLinksProps} from './types';
 import './CustomButton.scss';
 
-const CustomButton = () => {    
-  return (
-    <Button className="button">Button</Button>
-    );
+export const CustomButtonWithLink = (props: buttonWithLinksProps) => {    
+  return (<>
+     <Link to={props.prefix + props.id}><Button className="button">{props.label}</Button></Link>
+    </>);
 };
-
-export default CustomButton;
