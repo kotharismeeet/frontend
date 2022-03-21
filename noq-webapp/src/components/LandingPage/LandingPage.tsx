@@ -25,7 +25,7 @@ export const LandingPage: Function = () => {
         <h3>Event / Venue Name</h3>
       </div>
 
-      <div>
+      <div className='flex-col'>
         <h5><b>Access Menu</b></h5>
         <small>Get the app to access discount and loyalty schemes</small>
         <CustomButtonWithLink prefix={prefix} id={id} label="Open in App" />

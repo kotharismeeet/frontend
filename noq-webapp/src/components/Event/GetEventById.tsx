@@ -1,16 +1,17 @@
 import { useParams } from "react-router-dom";
-import useAxios from "../hooks/useAxios";
+import {Component, ComponentWithoutProps} from '../utils/types';
+import {useAxios} from "../hooks/useAxios";
 import { ToastContainer } from "react-toastify";
-import { Event } from "./Event";
+import { GetEventVendors } from "./GetEventVendors";
 
-export const GetEventById = () => {
+export const GetEventById: Function = ():Component | ComponentWithoutProps => {
     const params: any = useParams();
     const eventId = params.id;
-    const {error, response} = useAxios("GET",{url:"event/"+eventId,body:{}},"");
-    if(error) {
-        //console.log(error);
+    const {error, response, status}: any  = useAxios("GET",{url:"/event/vendorinevent/"+eventId,body:{}},"");
+    if(status !== 200) {
+        console.log(error);
         //toastMessage(error);
         return <ToastContainer />
     }
-    else return <Event event={response} />
+    else return <GetEventVendors vendor={response} />
 }
