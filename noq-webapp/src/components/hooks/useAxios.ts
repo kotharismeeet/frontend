@@ -9,7 +9,7 @@ export const useAxios = (method: string, payload: payloadParams, queries: string
     const [error,setError] = useState({});
     const BACKEND_SERVER = "http://localhost:8080/api";
     let apiURL = queries !== "" ? BACKEND_SERVER + payload.url + queries : BACKEND_SERVER + payload.url;
-    
+    //console.log(apiURL);
     const axiosCall = async () => {
         switch(method) {
             case "GET":
@@ -48,8 +48,14 @@ export const useAxios = (method: string, payload: payloadParams, queries: string
     }
 
     useEffect(()=>{
-        // componentDidMount
+        console.log('componentDidMount');
         axiosCall();
+        return () => {
+            console.log('componentDidUnmount');
+            setStatus(200);
+            setError({});
+            setResponse({});
+        }
     },[])
     return {response,error,status};
 }

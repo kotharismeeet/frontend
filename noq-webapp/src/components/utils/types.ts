@@ -9,6 +9,7 @@ export interface ComponentWithoutProps {
 export interface buttonWithLinksProps  {
     label: string,
     prefix: string,
+    suffix: string
     id: string
 }
 

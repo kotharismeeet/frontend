@@ -21,15 +21,14 @@ export const LandingPage: Function = () => {
 
     return (<div className='flex-col'>
       <div>
-        <h1><b>Welcome to {prefix}</b></h1>  
-        <h3>Event / Venue Name</h3>
+        <h1><b>Welcome to {prefix}</b></h1>
       </div>
 
       <div className='flex-col'>
         <h5><b>Access Menu</b></h5>
         <small>Get the app to access discount and loyalty schemes</small>
-        <CustomButtonWithLink prefix={prefix} id={id} label="Open in App" />
-        <CustomButtonWithLink  prefix={prefix} id={id} label="Continue on this Browser" />
+        <CustomButtonWithLink prefix={prefix} suffix="" id={id} label="Open in App" />
+        <CustomButtonWithLink prefix={prefix} suffix="vendors" id={id} label="Continue on this Browser" />
         <small>Powered by</small>
         {/*<img src={logo} />*/}
       </div>

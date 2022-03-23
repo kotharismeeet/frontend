@@ -4,7 +4,7 @@ import {Bars} from '@agney/react-loading';
 export const Loader = () => {
     return (
             <Bars 
-                color="#7422c5" height={64} width={64}
+                color="#7422c5" height={100} width={100}
             />
     );
 }
