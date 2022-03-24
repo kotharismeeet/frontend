@@ -12,11 +12,15 @@
 
 .flex-row{
     color: #000;
-    max-width: 400px;
+    width: 400px;
+    max-width: 95vw;
+    height: 20vh;
     max-height: 20vh;
-    margin: 0.5rem;
-    background-color: lighten(#7c7c7c,49);
-    border-radius: 30px 30px 30px 30px;
+    margin: 1rem;
+    border-radius: 30px;
+    background: lighten(#7c7c7c,49);
+    box-shadow:  7px 7px 5px #bebebe,
+             -7px -7px 5px #ffffff;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -24,7 +28,7 @@
     align-items: center;
 }
 
-.flex-col {
+.flex-col-event {
     max-height: 20vh;
     display: flex;
     flex-direction: column;

@@ -61,11 +61,11 @@ export const GetEventVendors = () => {
                             // animate={{ x: 0}}
                             // transition={{delay: 0.5, duration: 1}} 
                          >
-                            <div className="flex-col">
+                            <div className="flex-col-event">
                                 <div className='flex-start'><h3>{vendor.display_name}</h3></div>
                                 <div className='flex-start'><small>{vendor.description}</small></div>
                             </div>
-                            <div className='flex-col'>
+                            <div className='flex-col-event'>
                                 <div className='flex-end'><h4 className='primary-color'>Open</h4></div>
                                 <div className='flex-end'><small className='primary-color'>Estimated Time in 30 mins</small></div>
                             </div>

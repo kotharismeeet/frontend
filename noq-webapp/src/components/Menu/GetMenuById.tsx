@@ -12,6 +12,7 @@ import styled from '@emotion/styled';
 const StyledLink = styled(Link)`
     text-decoration: none;
     &:focus, &:hover, &:visited, &:link, &:active {
+        color: #000;
         text-decoration: none;
     }
 `;
@@ -22,14 +23,13 @@ export const GetMenubyId = () => {
     const {error, response, status}: any = useAxios("GET",{url:"/item/vendor/"+vendorId,body:{}},"");
     const [loaded,setLoaded]=useState(true);
     const [items,setItems]=useState([]);
-    const [categoryNames,setCategoryNames]=useState([]);
+    const [categoryNames,setCategoryNames]: any=useState([]);
 
     const getCategoryNames = () => {
-        let categories: any= [];
         items.map((item :any) => {
-            categories.push(item.name[0])
+            /*if(!items.includes(item.name[0]))*/ return setCategoryNames((prevCategoryNames: []) => [...prevCategoryNames, item.name[0]]);
+            // else return; 
         });
-        setCategoryNames(categories);
     }
 
     useEffect(()=>{
@@ -40,6 +40,7 @@ export const GetMenubyId = () => {
             setItems(response.data.itemsByCategory);
             setLoaded(true);
             getCategoryNames();
+            console.log(categoryNames);
         }
     },[response]);
 
@@ -57,7 +58,7 @@ export const GetMenubyId = () => {
                 <MyLoader />
                 <MyLoader />
             </div>:
-            <div>
+            <div className="base-menu">
                 {items.map((item: any) => {
                     return <div>
                         <h2 className="category-name" id={`#${item.name[0]}`}>{item.name[0]}</h2>

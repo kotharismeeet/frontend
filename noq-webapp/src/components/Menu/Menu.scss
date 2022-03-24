@@ -1,12 +1,19 @@
+.base-menu {
+    background-color :lighten(#7c7c7c,49);
+}
+
 .category-name {
     margin: 1rem;
 }
 
 .flex-col {
-    background-color: lighten(#7c7c7c,49);
     margin: 1rem;
     padding: 1rem;
-    border-radius: 30px 30px 30px 30px;
+    border-radius: 30px;
+    background: lighten(#7c7c7c,49);
+    //https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
+    box-shadow:  7px 7px 5px #bebebe,
+             -7px -7px 5px #ffffff;
     height: 20vh;
     max-height: 20vh;
     width: 400px;
@@ -44,15 +51,11 @@
     height: 45;
     color: #7c7c7c;
     border: 1px #7c7c7c;
-}
-
-.nav-button-active {
-    width: 100;
-    height: 45;
-    color:#fff;
-    background-color: #ec6bf8;
-    border-radius: 30px 30px 30px 30px;
-
+    // &:active : {
+    //     color:#fff;
+    //     background-color: #ec6bf8;
+    //     border-radius: 30px 30px 30px 30px;
+    // }
     &:hover {
         cursor: pointer;
     }
